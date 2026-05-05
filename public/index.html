@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BFHL — Data Classifier</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="container">
+
+    <div class="header">
+      <div class="badge">POST /bfhl</div>
+      <h1>Data <span>Classifier</span></h1>
+      <p>Bajaj Finserv Health Labs</p>
+    </div>
+
+    <div class="card">
+      <label>Input Array (JSON format)</label>
+      <textarea id="inputArea" placeholder='["a","1","334","4","R","$"]'></textarea>
+      <div class="chips">
+        <span>Try:</span>
+        <button class="chip" onclick="fill(0)">Example A</button>
+        <button class="chip" onclick="fill(1)">Example B</button>
+        <button class="chip" onclick="fill(2)">Example C</button>
+      </div>
+      <button class="run-btn" id="runBtn" onclick="run()">▶ Run</button>
+      <p class="error" id="err"></p>
+    </div>
+
+    <div id="results">
+      <div class="success-badge">✓ 200 OK — is_success: true</div>
+      <div class="grid">
+        <div class="result-card blue">
+          <div class="rtitle">Even Numbers</div>
+          <div class="rval" id="r-even"></div>
+        </div>
+        <div class="result-card purple">
+          <div class="rtitle">Odd Numbers</div>
+          <div class="rval" id="r-odd"></div>
+        </div>
+        <div class="result-card green">
+          <div class="rtitle">Alphabets</div>
+          <div class="rval" id="r-alpha"></div>
+        </div>
+        <div class="result-card orange">
+          <div class="rtitle">Special Characters</div>
+          <div class="rval" id="r-special"></div>
+        </div>
+        <div class="result-card pink">
+          <div class="rtitle">Sum</div>
+          <div class="rval" id="r-sum"></div>
+        </div>
+        <div class="result-card teal">
+          <div class="rtitle">Concat String</div>
+          <div class="rval" id="r-concat"></div>
+        </div>
+      </div>
+
+      <div class="card json-card">
+        <div class="json-top">
+          <span>Raw Response</span>
+          <button class="chip" onclick="copy()">Copy</button>
+        </div>
+        <pre id="jsonOut"></pre>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
